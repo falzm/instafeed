@@ -8,8 +8,17 @@ import (
 	"github.com/Masterminds/goutils"
 	"github.com/ahmdrz/goinsta"
 	instarep "github.com/ahmdrz/goinsta/response"
+	sentry "github.com/getsentry/raven-go"
 	"github.com/gorilla/feeds"
 )
+
+var sendtoSentry bool
+
+func init() {
+	if os.Getenv("SENTRY_DSN") != "" {
+		sendtoSentry = true
+	}
+}
 
 func main() {
 	if len(os.Args) != 2 {
@@ -94,6 +103,10 @@ func formatFeedContent(item *instarep.Item) (*feeds.Item, error) {
 }
 
 func dieOnError(format string, a ...interface{}) {
+	if sendtoSentry {
+		sentry.CaptureErrorAndWait(fmt.Errorf(format, a...), nil)
+	}
+
 	fmt.Fprintf(os.Stderr, fmt.Sprintf("error: %s\n", format), a...)
 	os.Exit(1)
 }
