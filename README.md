@@ -4,8 +4,8 @@
 
 ## Requirements
 
-* the Go language compiler (version >= 1.9)
-* a valid Instagram account
+* The Go language compiler (version >= 1.9)
+* A valid Instagram account
 
 ## Building
 
@@ -13,7 +13,7 @@ At the top of the sources directory, just type `make`. If every went well, you s
 
 ## Usage
 
-`instafeed` expects the `IG_LOGIN` and `IG_PASSWORD` environment variables set to your Instagram login and password respectively, and the username of the Instagram user provided as argument, and prints the RSS feed on the standard output.
+`instafeed` expects the `IG_LOGIN` and `IG_PASSWORD` environment variables set to your Instagram login and password respectively, and the username of the Instagram user provided as argument. On successful execution, it prints the resulting RSS feed on the standard output.
 
 Example:
 
