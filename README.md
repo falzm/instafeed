@@ -9,7 +9,7 @@
 
 ## Building
 
-At the top of the sources directory, just type `make`. If every went well, you should end up with binary named `instafeed` in your current directory.
+At the top of the sources directory, just type `make`. If everything went well, you should end up with binary named `instafeed` in your current directory.
 
 ## Usage
 
