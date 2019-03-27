@@ -7,11 +7,25 @@
 * The Go language compiler (version >= 1.9)
 * A valid Instagram account
 
-## Building
+## Installation
+
+### Pre-compiled binaries
+
+Pre-compiled binaries are available for [stable releases](https://github.com/falzm/instafeed/releases).
+
+### Using `go get`
+
+```console
+go get github.com/falzm/instafeed
+```
+
+### From source
 
 At the top of the sources directory, just type `make`. If everything went well, you should end up with binary named `instafeed` in your current directory.
 
 ## Usage
+
+Run `instafeed -h` for usage help.
 
 `instafeed` expects the `IG_LOGIN` and `IG_PASSWORD` environment variables set to your Instagram login and password respectively, and the username of the Instagram user provided as argument. On successful execution, it prints the resulting RSS feed on the standard output.
 
@@ -41,3 +55,4 @@ $ cat marutaro.xml
   </channel>
 </rss>
 ```
+In order to avoid re-logging into Instagram upon each execution, `instafeed` stores the user profile into a local file that is read at runtime (your password is **not** stored). By default this file is located at `$HOME/.instafeed`, but a different path can be specified using the `-f` option.
