@@ -51,19 +51,20 @@ const (
 	urlFollowing = "friendships/%d/following/"
 
 	// users
-	urlUserByName     = "users/%s/usernameinfo/"
-	urlUserByID       = "users/%d/info/"
-	urlUserBlock      = "friendships/block/%d/"
-	urlUserUnblock    = "friendships/unblock/%d/"
-	urlUserFollow     = "friendships/create/%d/"
-	urlUserUnfollow   = "friendships/destroy/%d/"
-	urlUserFeed       = "feed/user/%d/"
-	urlFriendship     = "friendships/show/%d/"
-	urlUserStories    = "feed/user/%d/reel_media/"
-	urlUserTags       = "usertags/%d/feed/"
-	urlBlockedList    = "users/blocked_list/"
-	urlUserInfo       = "users/%d/info/"
-	urlUserHighlights = "highlights/%d/highlights_tray/"
+	urlUserByName        = "users/%s/usernameinfo/"
+	urlUserByID          = "users/%d/info/"
+	urlUserBlock         = "friendships/block/%d/"
+	urlUserUnblock       = "friendships/unblock/%d/"
+	urlUserFollow        = "friendships/create/%d/"
+	urlUserUnfollow      = "friendships/destroy/%d/"
+	urlUserFeed          = "feed/user/%d/"
+	urlFriendship        = "friendships/show/%d/"
+	urlFriendshipPending = "friendships/pending/"
+	urlUserStories       = "feed/user/%d/reel_media/"
+	urlUserTags          = "usertags/%d/feed/"
+	urlBlockedList       = "users/blocked_list/"
+	urlUserInfo          = "users/%d/info/"
+	urlUserHighlights    = "highlights/%d/highlights_tray/"
 
 	// timeline
 	urlTimeline  = "feed/timeline/"
@@ -78,6 +79,7 @@ const (
 
 	// feeds
 	urlFeedLocationID = "feed/location/%d/"
+	urlFeedLocations  = "locations/%d/sections/"
 	urlFeedTag        = "feed/tag/%s/"
 
 	// media
