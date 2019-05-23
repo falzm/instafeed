@@ -6,7 +6,7 @@ github.com/ahmdrz/goinsta/v2
 github.com/certifi/gocertifi
 # github.com/getsentry/raven-go v0.2.0
 github.com/getsentry/raven-go
-# github.com/gorilla/feeds v1.1.1-0.20190321233042-2079b9bbce59
+# github.com/gorilla/feeds v1.1.1
 github.com/gorilla/feeds
 # github.com/pkg/errors v0.8.1
 github.com/pkg/errors
