@@ -1,6 +1,6 @@
 # github.com/Masterminds/goutils v1.0.1
 github.com/Masterminds/goutils
-# github.com/ahmdrz/goinsta/v2 v2.4.3 => github.com/ahmdrz/goinsta v0.0.0-20190729052829-bf558a94ed9d
+# github.com/ahmdrz/goinsta/v2 v2.4.4
 github.com/ahmdrz/goinsta/v2
 # github.com/certifi/gocertifi v0.0.0-20180118203423-deb3ae2ef261
 github.com/certifi/gocertifi
