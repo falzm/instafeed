@@ -22,6 +22,9 @@ var (
 	configFile   string
 	listFile     string
 	feedMaxItems int
+	showVersion  bool
+
+	version string
 )
 
 func init() {
@@ -32,8 +35,14 @@ func init() {
 	flag.StringVar(&configFile, "f", path.Join(os.Getenv("HOME"), ".instafeed"),
 		"Path to file where to store profile configuration")
 	flag.StringVar(&listFile, "l", "", "Path to file containing list of Instagram users")
+	flag.BoolVar(&showVersion, "v", false, "Show version and exit")
 	flag.IntVar(&feedMaxItems, "n", 20, "Number of user feed items")
 	flag.Parse()
+
+	if showVersion {
+		fmt.Println("instafeed", version)
+		os.Exit(0)
+	}
 }
 
 func main() {
