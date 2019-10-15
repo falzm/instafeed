@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"os"
 	"path"
+	"strconv"
 	"strings"
 	"time"
 
@@ -48,6 +49,7 @@ func init() {
 func main() {
 	var (
 		igUsers []string
+		items   []*feeds.Item
 		err     error
 	)
 
@@ -103,9 +105,21 @@ func main() {
 	}
 
 	for _, u := range igUsers {
-		items, err := fetchUserFeedItems(u)
-		if err != nil {
-			dieOnError(fmt.Sprintf("unable to retrieve user %q feed: %s", u, err))
+		switch {
+		case strings.HasPrefix(u, "loc:"):
+			id, err := strconv.Atoi(strings.TrimPrefix(u, "loc:"))
+			if err != nil {
+				dieOnError("invalid location-type value %q", u)
+			}
+
+			if items, err = fetchLocationFeedItems(int64(id)); err != nil {
+				dieOnError(fmt.Sprintf("unable to retrieve user %q feed: %s", u, err))
+			}
+
+		default:
+			if items, err = fetchUserFeedItems(u); err != nil {
+				dieOnError(fmt.Sprintf("unable to retrieve user %q feed: %s", u, err))
+			}
 		}
 
 		for _, item := range items {
@@ -151,6 +165,26 @@ func fetchUserFeedItems(name string) ([]*feeds.Item, error) {
 				break
 			}
 			return nil, errors.Wrap(err, "unable to retrieve user feed")
+		}
+	}
+
+	return items, nil
+}
+
+func fetchLocationFeedItems(id int64) ([]*feeds.Item, error) {
+	section, err := insta.Locations.Feeds(6811413)
+	if err != nil {
+		return nil, errors.Wrap(err, "unable to retrieve location feeds")
+	}
+
+	items := make([]*feeds.Item, 0)
+
+	for _, l := range section.Sections {
+		for _, m := range l.LayoutContent.Medias {
+			items = append(items, formatFeedItem(&m.Media))
+			if len(items) >= feedMaxItems {
+				return items, nil
+			}
 		}
 	}
 
