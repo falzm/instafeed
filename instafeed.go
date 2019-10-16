@@ -172,7 +172,7 @@ func fetchUserFeedItems(name string) ([]*feeds.Item, error) {
 }
 
 func fetchLocationFeedItems(id int64) ([]*feeds.Item, error) {
-	section, err := insta.Locations.Feeds(6811413)
+	section, err := insta.Locations.Feeds(id)
 	if err != nil {
 		return nil, errors.Wrap(err, "unable to retrieve location feeds")
 	}
