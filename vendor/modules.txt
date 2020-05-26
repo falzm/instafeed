@@ -1,6 +1,6 @@
 # github.com/Masterminds/goutils v1.0.1
 github.com/Masterminds/goutils
-# github.com/ahmdrz/goinsta/v2 v2.4.4
+# github.com/ahmdrz/goinsta/v2 v2.4.5
 github.com/ahmdrz/goinsta/v2
 # github.com/gorilla/feeds v1.1.1
 github.com/gorilla/feeds

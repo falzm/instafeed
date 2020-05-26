@@ -2,6 +2,8 @@ github.com/Masterminds/goutils v1.0.1 h1:upyB/JGR/aPHTE3f4O3mBIbJCr7aPup+/03IS4a
 github.com/Masterminds/goutils v1.0.1/go.mod h1:8cTjp+g8YejhMuvIA5y2vz3BpJxksy863GQaJW2MFNU=
 github.com/ahmdrz/goinsta/v2 v2.4.4 h1:AMqRsuduhXeTBbHMu5HZdnFwYIVylTFn/s9cwd6oJaY=
 github.com/ahmdrz/goinsta/v2 v2.4.4/go.mod h1:XUEELCWd3hVSqADejqxTa8Uc7Yto9cb6a6HrfkGwVf8=
+github.com/ahmdrz/goinsta/v2 v2.4.5 h1:yiNEpTNEx/VWlcCq93miWUx6d2uxdEyklwljsZaiD5I=
+github.com/ahmdrz/goinsta/v2 v2.4.5/go.mod h1:XUEELCWd3hVSqADejqxTa8Uc7Yto9cb6a6HrfkGwVf8=
 github.com/gorilla/feeds v1.1.1 h1:HwKXxqzcRNg9to+BbvJog4+f3s/xzvtZXICcQGutYfY=
 github.com/gorilla/feeds v1.1.1/go.mod h1:Nk0jZrvPFZX1OBe5NPiddPw7CfwF6Q9eqzaBbaightA=
 github.com/kr/pretty v0.2.0 h1:s5hAObm+yFO5uHYt5dYjxi2rXrsnmRpJx4OYvIWUaQs=
