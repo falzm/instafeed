@@ -11,14 +11,12 @@ import (
 
 	"github.com/Masterminds/goutils"
 	"github.com/ahmdrz/goinsta/v2"
-	sentry "github.com/getsentry/raven-go"
 	"github.com/gorilla/feeds"
 	"github.com/pkg/errors"
 )
 
 var (
 	insta        *goinsta.Instagram
-	sendtoSentry bool
 	configFile   string
 	listFile     string
 	feedMaxItems int
@@ -28,10 +26,6 @@ var (
 )
 
 func init() {
-	if os.Getenv("SENTRY_DSN") != "" {
-		sendtoSentry = true
-	}
-
 	flag.StringVar(&configFile, "f", path.Join(os.Getenv("HOME"), ".instafeed"),
 		"Path to file where to store profile configuration")
 	flag.StringVar(&listFile, "l", "", "Path to file containing list of Instagram users")
@@ -187,10 +181,6 @@ func formatFeedItem(item *goinsta.Item) *feeds.Item {
 }
 
 func dieOnError(format string, a ...interface{}) {
-	if sendtoSentry {
-		sentry.CaptureErrorAndWait(fmt.Errorf(format, a...), nil)
-	}
-
 	fmt.Fprintf(os.Stderr, fmt.Sprintf("error: %s\n", format), a...)
 	os.Exit(1)
 }
