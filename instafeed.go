@@ -64,10 +64,6 @@ func main() {
 		}
 	}
 
-	if len(igUsers) == 0 && len(flag.Args()) == 0 {
-		dieOnError("missing Instagram username argument")
-	}
-
 	igLogin := os.Getenv("IG_LOGIN")
 	igPassword := os.Getenv("IG_PASSWORD")
 
@@ -87,6 +83,28 @@ func main() {
 
 	if err := insta.Export(configFile); err != nil {
 		fmt.Fprintf(os.Stderr, "error: unable to export Instagram client configuration: %s\n", err)
+	}
+
+	if len(igUsers) == 0 {
+		// If no static list of IG users is provided, attempt retrieving the list of followings
+		// from the logged user's account
+		for followings := insta.Account.Following(); followings.Next(); {
+			for _, u := range followings.Users {
+				igUsers = append(igUsers, u.Username)
+			}
+
+			if err := followings.Error(); err != nil {
+				if err == goinsta.ErrNoMore {
+					break
+				}
+
+				dieOnError("unable to retrieve followings: %s", err)
+			}
+		}
+
+		if len(igUsers) == 0 {
+			dieOnError("no users provided")
+		}
 	}
 
 	feed := &feeds.Feed{

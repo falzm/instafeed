@@ -27,9 +27,11 @@ At the top of the sources directory, just type `make`. If everything went well, 
 
 Run `instafeed -h` for usage help.
 
-`instafeed` expects the `IG_LOGIN` and `IG_PASSWORD` environment variables set to your Instagram login and password respectively, and the username of the Instagram user provided as argument. On successful execution, it prints the resulting RSS feed on the standard output.
+`instafeed` expects the `IG_LOGIN` and `IG_PASSWORD` environment variables set to your Instagram login and password respectively, and optionally the username of the Instagram user provided as argument. On successful execution, it prints the resulting RSS feed on the standard output.
 
 If multiple Instagram users arguments are provided, `instafeed` will bulk all retrieved posts into a single feed sorted in reverse chronological order (i.e. from newest to oldest).
+
+If no Instagram usernames are provided – either as command line arguments or via the `-l` option –, `instafeed` attempts to retrieve the currently logged account's *followings* and use those as the source of usernames.
 
 Example:
 
