@@ -1,7 +1,5 @@
-github.com/Masterminds/goutils v1.0.1 h1:upyB/JGR/aPHTE3f4O3mBIbJCr7aPup+/03IS4aXU6Y=
-github.com/Masterminds/goutils v1.0.1/go.mod h1:8cTjp+g8YejhMuvIA5y2vz3BpJxksy863GQaJW2MFNU=
-github.com/ahmdrz/goinsta/v2 v2.4.5 h1:yiNEpTNEx/VWlcCq93miWUx6d2uxdEyklwljsZaiD5I=
-github.com/ahmdrz/goinsta/v2 v2.4.5/go.mod h1:XUEELCWd3hVSqADejqxTa8Uc7Yto9cb6a6HrfkGwVf8=
+github.com/Masterminds/goutils v1.1.0 h1:zukEsf/1JZwCMgHiK3GZftabmxiCw4apj3a28RPBiVg=
+github.com/Masterminds/goutils v1.1.0/go.mod h1:8cTjp+g8YejhMuvIA5y2vz3BpJxksy863GQaJW2MFNU=
 github.com/ahmdrz/goinsta/v2 v2.4.6-0.20200611051935-f3fdb17dd184 h1:KIOor5jcclbNRYfoTIy64YgWOJpca288q52NrSoO68o=
 github.com/ahmdrz/goinsta/v2 v2.4.6-0.20200611051935-f3fdb17dd184/go.mod h1:XUEELCWd3hVSqADejqxTa8Uc7Yto9cb6a6HrfkGwVf8=
 github.com/gorilla/feeds v1.1.1 h1:HwKXxqzcRNg9to+BbvJog4+f3s/xzvtZXICcQGutYfY=
